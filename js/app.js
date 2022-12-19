@@ -92,7 +92,7 @@ const resetEl = document.getElementById("#btn")
 init()
 
 function init() {
-    board = [null, null, null, null, null, null, null, null, null,null, null, null, null, null, null, null, null, null,null, null, null, null, null, null, null, null, null,null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+    board = [1, 1, 1, 1, null, null, null, null, null,null, null, null, null, null, null, null, null, null,null, null, null, null, null, null, null, null, null,null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
     playerTurn = 1
     winner = false
     tie = false
@@ -102,7 +102,7 @@ function render () {
 
 }
 
-function handleClick () {
+function updateBoard () {
 
 }
 
@@ -177,4 +177,8 @@ function checkForWinner () {
         winner = true
     }
     
+}
+
+function switchPlayerTurn () {
+    if(!winner) turn *= -1
 }
