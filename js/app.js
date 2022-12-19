@@ -77,13 +77,13 @@ let board, playerTurn, winner, tie
 
 
 /*------------------------ Cached Element References ------------------------*/
-const circleEl = document.querySelectorAll(".board div")
+const circleEl = document.querySelectorAll(".cell")
 const boardEl = document.querySelector(".board")
 const resultEl = document.getElementById("result")
-const messageEL = document.getElementById("message")
+const messageEL = document.getElementById("#current-player")
 const resetEl = document.getElementById("#btn")
 /*----------------------------- Event Listeners -----------------------------*/
-
+console.log(circleEl);
 
 
 
@@ -93,19 +93,36 @@ init()
 
 function init() {
     board = [1, 1, 1, 1, null, null, null, null, null,null, null, null, null, null, null, null, null, null,null, null, null, null, null, null, null, null, null,null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
-    playerTurn = 1
+    turn = 1
     winner = false
     tie = false
+    render()
 }
 
 function render () {
-
+    updateBoard()
 }
 
 function updateBoard () {
-
+    // board.forEach((circle, index) => {
+    //     const circleE = circleEl[index]
+    //     if (circle === 1) {
+    //         return circleE.innerText = "X";
+    //     } else if (circle === -1) {
+    //         return circleE.innerText = "O";
+    //     } else {
+    //         return circleE.innerText = "";
+    //     }
+    // })
 }
 
+function handleClick () {
+    for (let i = 0; i < squares.length; i++) {
+        squares[i].onclick = () => {
+            alert('clicked' + i)
+}
+    }
+}    
 function checkForWinner () {
     if (
     Math.abs(board[0] + board[1] + board[2] + board[3]) === 4 ||
