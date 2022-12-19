@@ -68,7 +68,7 @@ let winningCombos = [
     [10, 17, 24, 31],
     [11, 18, 25, 32],
     [12, 19, 26, 33],
-    [13, 20, 27, 34],
+    [13, 20, 27, 34]
 ]
 
 
@@ -85,3 +85,9 @@ const resetBtnEl = document.getElementById("btn")
 
 
 /*-------------------------------- Functions --------------------------------*/
+
+function checkForWinner () {
+    if (
+        
+    )
+}
