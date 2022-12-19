@@ -77,17 +77,14 @@ let board, turn, winner, tie
 
 
 /*------------------------ Cached Element References ------------------------*/
-const gameBoardEl = document.querySelector(".board")
-const messageEl = document.getElementById("message")
-const resetBtnEl = document.getElementById("btn")
+const circleEl = document.querySelectorAll(".board div")
+const resultEl = document
 /*----------------------------- Event Listeners -----------------------------*/
-
+circleEl.addEventListener('click', alert)
 
 
 /*-------------------------------- Functions --------------------------------*/
 
 function checkForWinner () {
-    if (
-        
-    )
+
 }
