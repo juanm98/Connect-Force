@@ -119,8 +119,8 @@ function updateBoard () {
             return circleE.textContent = "🔴";
         } else if (circle === -1) {
             return circleE.textContent = "🟡";
-        } else {
-            return circleE.textContent = "";
+        } else if (circle === null) {
+            return circleE.textContent = " ";
         }
     })
 }
