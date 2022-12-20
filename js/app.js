@@ -80,11 +80,11 @@ let board, playerTurn, winner, tie
 const circleEl = document.querySelectorAll(".cell")
 const boardEl = document.querySelector(".board")
 const resultEl = document.getElementById("result")
-const messageEL = document.getElementById("#current-player")
+const messageEl = document.getElementById("#current-player")
 const resetEl = document.getElementById("#btn")
 /*----------------------------- Event Listeners -----------------------------*/
-console.log(circleEl);
 
+boardEl.addEventListener('click', handleClick)
 
 
 /*-------------------------------- Functions --------------------------------*/
@@ -114,6 +114,16 @@ function updateBoard () {
     //         return circleE.innerText = "";
     //     }
     // })
+}
+
+function updateMessage () {
+    if (!winner && !tie) {
+        messageEl.textContent = `It's ${turn === 1 ? 'Player 1' : 'Player 2'}'s turn` 
+    } else if (!winner && tie) {
+        messageEl.textContent = `Fight!`;
+    } else {
+        messageEl.textContent = `${turn === 1 ? 'Player 1' : 'Player 2'} wins`;
+    }
 }
 
 function handleClick () {
