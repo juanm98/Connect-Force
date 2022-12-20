@@ -95,12 +95,12 @@ init()
 
 function init() {
     board = [
-    [0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0] 
+    [null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null] 
 ]
     turn = 1
     winner = false
@@ -110,6 +110,7 @@ function init() {
 
 function render () {
     updateBoard()
+    updateMessage()
 }
 
 function updateBoard () {
@@ -129,7 +130,7 @@ function updateMessage () {
     if (!winner && !tie) {
         messageEl.textContent = `It's ${turn === 1 ? '🔴' : '🟡'}'s turn` 
     } else if (!winner && tie) {
-        messageEl.textContent = `Fight!`;
+        messageEl.textContent = `Tie!`;
     } else {
         messageEl.textContent = `${turn === 1 ? '🔴' : '🟡'} wins`;
     }
