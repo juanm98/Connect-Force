@@ -32,7 +32,7 @@ div{
     border-radius: 50%;
 }
 
-.cell:hover {
+.grid-item:hover {
     background-color: orange;
 }
 
