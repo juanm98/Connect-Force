@@ -73,26 +73,35 @@ let winningCombos = [
 
 
 /*---------------------------- Variables (state) ----------------------------*/
-let board, playerTurn, winner, tie
+let board, turn, winner, tie
 
 
 /*------------------------ Cached Element References ------------------------*/
-const circleEl = document.querySelectorAll(".cell")
-const boardEl = document.querySelector(".board")
-const resultEl = document.getElementById("result")
-const messageEl = document.getElementById("#current-player")
-const resetEl = document.getElementById("#btn")
+const circleEl = document.querySelectorAll('.grid-item')
+const boardEl = document.querySelector('.board')
+const resultEl = document.getElementById('result')
+const messageEl = document.getElementById('current-player')
+const resetEl = document.getElementById('btn')
 /*----------------------------- Event Listeners -----------------------------*/
-
 boardEl.addEventListener('click', handleClick)
+
 
 
 /*-------------------------------- Functions --------------------------------*/
 
+
+
 init()
 
 function init() {
-    board = [1, 1, 1, 1, null, null, null, null, null,null, null, null, null, null, null, null, null, null,null, null, null, null, null, null, null, null, null,null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+    board = [
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0] 
+]
     turn = 1
     winner = false
     tie = false
@@ -104,108 +113,105 @@ function render () {
 }
 
 function updateBoard () {
-    // board.forEach((circle, index) => {
-    //     const circleE = circleEl[index]
-    //     if (circle === 1) {
-    //         return circleE.innerText = "X";
-    //     } else if (circle === -1) {
-    //         return circleE.innerText = "O";
-    //     } else {
-    //         return circleE.innerText = "";
-    //     }
-    // })
+    board.forEach((circle, index) => {
+        const circleE = circleEl[index]
+        if (circle === 1) {
+            return circleE.textContent = "🔴";
+        } else if (circle === -1) {
+            return circleE.textContent = "🟡";
+        } else {
+            return circleE.textContent = "";
+        }
+    })
 }
 
 function updateMessage () {
     if (!winner && !tie) {
-        messageEl.textContent = `It's ${turn === 1 ? 'Player 1' : 'Player 2'}'s turn` 
+        messageEl.textContent = `It's ${turn === 1 ? '🔴' : '🟡'}'s turn` 
     } else if (!winner && tie) {
         messageEl.textContent = `Fight!`;
     } else {
-        messageEl.textContent = `${turn === 1 ? 'Player 1' : 'Player 2'} wins`;
+        messageEl.textContent = `${turn === 1 ? '🔴' : '🟡'} wins`;
     }
 }
 
 function handleClick () {
-    for (let i = 0; i < squares.length; i++) {
-        squares[i].onclick = () => {
-            alert('clicked' + i)
-}
-    }
-}    
-function checkForWinner () {
-    if (
-    Math.abs(board[0] + board[1] + board[2] + board[3]) === 4 ||
-    Math.abs(board[41] + board[40] + board[39] + board[38]) === 4 ||
-    Math.abs(board[7] + board[8] + board[9] + board[10]) === 4 ||
-    Math.abs(board[34] + board[33] + board[32] + board[31]) === 4 ||
-    Math.abs(board[14] + board[15] + board[16] + board[17]) === 4 ||
-    Math.abs(board[27] + board[26] + board[25] + board[24]) === 4 ||
-    Math.abs(board[21] + board[22] + board[23] + board[24]) === 4 ||
-    Math.abs(board[20] + board[19] + board[18] + board[17]) === 4 ||
-    Math.abs(board[28] + board[29] + board[30] + board[31]) === 4 ||
-    Math.abs(board[13] + board[12] + board[11] + board[10]) === 4 ||
-    Math.abs(board[13] + board[12] + board[11] + board[10]) === 4 ||
-    Math.abs(board[35] + board[36] + board[37] + board[38]) === 4 ||
-    Math.abs(board[13] + board[12] + board[11] + board[10]) === 4 ||
-    Math.abs(board[35] + board[36] + board[37] + board[38]) === 4 ||
-    Math.abs(board[6] + board[5] + board[4] + board[3]) === 4 ||
-    Math.abs(board[0] + board[7] + board[14] + board[21]) === 4 ||
-    Math.abs(board[41] + board[34] + board[27] + board[20]) === 4 ||
-    Math.abs(board[40] + board[33] + board[26] + board[19]) === 4 ||
-    Math.abs(board[2] + board[9] + board[16] + board[23]) === 4 ||
-    Math.abs(board[39] + board[32] + board[25] + board[18]) === 4 ||
-    Math.abs(board[3] + board[10] + board[17] + board[24]) === 4 ||
-    Math.abs(board[38] + board[31] + board[24] + board[17]) === 4 ||
-    Math.abs(board[4] + board[11] + board[18] + board[25]) === 4 ||
-    Math.abs(board[37] + board[30] + board[23] + board[16]) === 4 ||
-    Math.abs(board[36] + board[29] + board[22] + board[15]) === 4 ||
-    Math.abs(board[6] + board[13] + board[20] + board[27]) === 4 ||
-    Math.abs(board[35] + board[28] + board[16] + board[24]) === 4 ||
-    Math.abs(board[41] + board[33] + board[25] + board[17]) === 4 ||
-    Math.abs(board[7] + board[15] + board[23] + board[31]) === 4 ||
-    Math.abs(board[34] + board[26] + board[18] + board[10]) === 4 ||
-    Math.abs(board[14] + board[22] + board[30] + board[38]) === 4 ||
-    Math.abs(board[27] + board[19] + board[11] + board[3]) === 4 ||
-    Math.abs(board[35] + board[29] + board[23] + board[17]) === 4 ||
-    Math.abs(board[28] + board[22] + board[16] + board[10]) === 4 ||
-    Math.abs(board[13] + board[19] + board[25] + board[31]) === 4 ||
-    Math.abs(board[21] + board[15] + board[9] + board[3]) === 4 ||
-    Math.abs(board[20] + board[26] + board[32] + board[38]) === 4 ||
-    Math.abs(board[36] + board[30] + board[24] + board[18]) === 4 ||
-    Math.abs(board[37] + board[31] + board[25] + board[19]) === 4 ||
-    Math.abs(board[39] + board[31] + board[23] + board[15]) === 4 ||
-    Math.abs(board[40] + board[32] + board[24] + board[16]) === 4 ||
-    Math.abs(board[9] + board[17] + board[25] + board[33]) === 4 ||
-    Math.abs(board[8] + board[16] + board[24] + board[32]) === 4 ||
-    Math.abs(board[11] + board[17] + board[23] + board[29]) === 4 ||
-    Math.abs(board[12] + board[18] + board[24] + board[30]) === 4 ||
-    Math.abs(board[1] + board[2] + board[3] + board[4]) === 4 ||
-    Math.abs(board[5] + board[4] + board[3] + board[2]) === 4 ||
-    Math.abs(board[8] + board[9] + board[10] + board[11]) === 4 ||
-    Math.abs(board[12] + board[11] + board[10] + board[9]) === 4 ||
-    Math.abs(board[15] + board[16] + board[17] + board[18]) === 4 ||
-    Math.abs(board[19] + board[18] + board[17] + board[16]) === 4 ||
-    Math.abs(board[22] + board[23] + board[24] + board[25]) === 4 ||
-    Math.abs(board[26] + board[25] + board[24] + board[23]) === 4 ||
-    Math.abs(board[29] + board[30] + board[31] + board[32]) === 4 ||
-    Math.abs(board[33] + board[32] + board[31] + board[30]) === 4 ||
-    Math.abs(board[36] + board[37] + board[38] + board[39]) === 4 ||
-    Math.abs(board[40] + board[39] + board[38] + board[37]) === 4 ||
-    Math.abs(board[7] + board[14] + board[21] + board[28]) === 4 ||
-    Math.abs(board[8] + board[15] + board[22] + board[29]) === 4 ||
-    Math.abs(board[9] + board[16] + board[23] + board[30]) === 4 ||
-    Math.abs(board[10] + board[17] + board[24] + board[31]) === 4 ||
-    Math.abs(board[11] + board[18] + board[25] + board[32]) === 4 ||
-    Math.abs(board[12] + board[19] + board[26] + board[33]) === 4 ||
-    Math.abs(board[13] + board[20] + board[27] + board[34]) === 4 
-    
-    ) {
-        winner = true
-    }
+    let sqIdx = 
     
 }
+// function checkForWinner () {
+//     if (
+//     Math.abs(board[0] + board[1] + board[2] + board[3]) === 4 ||
+//     Math.abs(board[41] + board[40] + board[39] + board[38]) === 4 ||
+//     Math.abs(board[7] + board[8] + board[9] + board[10]) === 4 ||
+//     Math.abs(board[34] + board[33] + board[32] + board[31]) === 4 ||
+//     Math.abs(board[14] + board[15] + board[16] + board[17]) === 4 ||
+//     Math.abs(board[27] + board[26] + board[25] + board[24]) === 4 ||
+//     Math.abs(board[21] + board[22] + board[23] + board[24]) === 4 ||
+//     Math.abs(board[20] + board[19] + board[18] + board[17]) === 4 ||
+//     Math.abs(board[28] + board[29] + board[30] + board[31]) === 4 ||
+//     Math.abs(board[13] + board[12] + board[11] + board[10]) === 4 ||
+//     Math.abs(board[13] + board[12] + board[11] + board[10]) === 4 ||
+//     Math.abs(board[35] + board[36] + board[37] + board[38]) === 4 ||
+//     Math.abs(board[13] + board[12] + board[11] + board[10]) === 4 ||
+//     Math.abs(board[35] + board[36] + board[37] + board[38]) === 4 ||
+//     Math.abs(board[6] + board[5] + board[4] + board[3]) === 4 ||
+//     Math.abs(board[0] + board[7] + board[14] + board[21]) === 4 ||
+//     Math.abs(board[41] + board[34] + board[27] + board[20]) === 4 ||
+//     Math.abs(board[40] + board[33] + board[26] + board[19]) === 4 ||
+//     Math.abs(board[2] + board[9] + board[16] + board[23]) === 4 ||
+//     Math.abs(board[39] + board[32] + board[25] + board[18]) === 4 ||
+//     Math.abs(board[3] + board[10] + board[17] + board[24]) === 4 ||
+//     Math.abs(board[38] + board[31] + board[24] + board[17]) === 4 ||
+//     Math.abs(board[4] + board[11] + board[18] + board[25]) === 4 ||
+//     Math.abs(board[37] + board[30] + board[23] + board[16]) === 4 ||
+//     Math.abs(board[36] + board[29] + board[22] + board[15]) === 4 ||
+//     Math.abs(board[6] + board[13] + board[20] + board[27]) === 4 ||
+//     Math.abs(board[35] + board[28] + board[16] + board[24]) === 4 ||
+//     Math.abs(board[41] + board[33] + board[25] + board[17]) === 4 ||
+//     Math.abs(board[7] + board[15] + board[23] + board[31]) === 4 ||
+//     Math.abs(board[34] + board[26] + board[18] + board[10]) === 4 ||
+//     Math.abs(board[14] + board[22] + board[30] + board[38]) === 4 ||
+//     Math.abs(board[27] + board[19] + board[11] + board[3]) === 4 ||
+//     Math.abs(board[35] + board[29] + board[23] + board[17]) === 4 ||
+//     Math.abs(board[28] + board[22] + board[16] + board[10]) === 4 ||
+//     Math.abs(board[13] + board[19] + board[25] + board[31]) === 4 ||
+//     Math.abs(board[21] + board[15] + board[9] + board[3]) === 4 ||
+//     Math.abs(board[20] + board[26] + board[32] + board[38]) === 4 ||
+//     Math.abs(board[36] + board[30] + board[24] + board[18]) === 4 ||
+//     Math.abs(board[37] + board[31] + board[25] + board[19]) === 4 ||
+//     Math.abs(board[39] + board[31] + board[23] + board[15]) === 4 ||
+//     Math.abs(board[40] + board[32] + board[24] + board[16]) === 4 ||
+//     Math.abs(board[9] + board[17] + board[25] + board[33]) === 4 ||
+//     Math.abs(board[8] + board[16] + board[24] + board[32]) === 4 ||
+//     Math.abs(board[11] + board[17] + board[23] + board[29]) === 4 ||
+//     Math.abs(board[12] + board[18] + board[24] + board[30]) === 4 ||
+//     Math.abs(board[1] + board[2] + board[3] + board[4]) === 4 ||
+//     Math.abs(board[5] + board[4] + board[3] + board[2]) === 4 ||
+//     Math.abs(board[8] + board[9] + board[10] + board[11]) === 4 ||
+//     Math.abs(board[12] + board[11] + board[10] + board[9]) === 4 ||
+//     Math.abs(board[15] + board[16] + board[17] + board[18]) === 4 ||
+//     Math.abs(board[19] + board[18] + board[17] + board[16]) === 4 ||
+//     Math.abs(board[22] + board[23] + board[24] + board[25]) === 4 ||
+//     Math.abs(board[26] + board[25] + board[24] + board[23]) === 4 ||
+//     Math.abs(board[29] + board[30] + board[31] + board[32]) === 4 ||
+//     Math.abs(board[33] + board[32] + board[31] + board[30]) === 4 ||
+//     Math.abs(board[36] + board[37] + board[38] + board[39]) === 4 ||
+//     Math.abs(board[40] + board[39] + board[38] + board[37]) === 4 ||
+//     Math.abs(board[7] + board[14] + board[21] + board[28]) === 4 ||
+//     Math.abs(board[8] + board[15] + board[22] + board[29]) === 4 ||
+//     Math.abs(board[9] + board[16] + board[23] + board[30]) === 4 ||
+//     Math.abs(board[10] + board[17] + board[24] + board[31]) === 4 ||
+//     Math.abs(board[11] + board[18] + board[25] + board[32]) === 4 ||
+//     Math.abs(board[12] + board[19] + board[26] + board[33]) === 4 ||
+//     Math.abs(board[13] + board[20] + board[27] + board[34]) === 4 
+    
+//     ) {
+//         winner = true
+//     }
+    
+// }
 
-function switchPlayerTurn () {
-    if(!winner) turn *= -1
-}
+// function switchPlayerTurn () {
+//     if(!winner) turn *= -1
+// }
