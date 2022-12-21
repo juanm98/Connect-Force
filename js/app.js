@@ -77,24 +77,25 @@ let board, turn, winner, tie
 
 
 /*------------------------ Cached Element References ------------------------*/
-const circleEl = document.querySelectorAll('.grid-item')
+const circlesEl = document.querySelectorAll(".circle")
 const boardEl = document.querySelector('.board')
 const resultEl = document.getElementById('result')
 const messageEl = document.getElementById('current-player')
 const resetEl = document.getElementById('btn')
 /*----------------------------- Event Listeners -----------------------------*/
-circleEl.addEventListener ('click', handleClick)
+console.log(circlesEl);
+circlesEl.forEach(function(circle) {
+    circle.addEventListener('click', handleClick)
+})
 resetEl.addEventListener('click', init)
 
 
 /*-------------------------------- Functions --------------------------------*/
 
-
-
 init()
 
 function init() {
-    gridBoard = [
+    board = [
     null, null, null, null, null, null, null,
     null, null, null, null, null, null, null,
     null, null, null, null, null, null, null,
@@ -114,13 +115,13 @@ function render () {
 }
 
 function updateBoard () {
-    gridBoard.forEach(function(circle, circleIdx) {
+    board.forEach(function(circle, Idx) {
         if (circle === 1) {
-            circleEl[circleIdx].textContent = "🔴";
+            circlesEl[Idx].innerHTML = "🔴"
         } else if (circle === -1) {
-            circleEl[circleIdx].textContent = "🟡";
+            circlesEl[Idx].innerHTML = "🟡"
         } else if (circle === null) {
-            circleEl[circleIdx].textContent = " ";
+            circlesEl[Idx].innerHTML = " "
         }
     })
 }
@@ -136,10 +137,18 @@ function updateMessage () {
 }
 
 function handleClick (evt) {
-    const sqIdx = parseInt()
-    
+    const sqIdx = parseInt(evt.target.id.replace('circle', ''))
+    if (board[sqIdx] !== null) return
+    if (winner === true) return
     checkForTie()
     checkForWinner()
+
+    let bottonRow = 35
+    while (board[sqIdx + bottonRow] !== null) {
+        bottonRow -= 7 
+    }
+    board[sqIdx + bottonRow] = turn
+
     switchPlayerTurn()
     render()
 }
