@@ -95,14 +95,13 @@ resetEl.addEventListener('click', init)
 init()
 
 function init() {
-    board = [
+    board = 
+    [null, null, null, null, null, null, null,
     null, null, null, null, null, null, null,
     null, null, null, null, null, null, null,
     null, null, null, null, null, null, null,
     null, null, null, null, null, null, null,
-    null, null, null, null, null, null, null,
-    null, null, null, null, null, null, null 
-]
+    null, null, null, null, null, null, null]
     turn = 1
     winner = false
     tie = false
@@ -130,7 +129,7 @@ function updateMessage () {
     if (!winner && !tie) {
         messageEl.textContent = `It's ${turn === 1 ? '🔴' : '🟡'}'s turn` 
     } else if (!winner && tie) {
-        messageEl.textContent = `Tie!`;
+        messageEl.textContent = "Tie!";
     } else {
         messageEl.textContent = `${turn === 1 ? '🔴' : '🟡'} wins`;
     }
@@ -155,13 +154,14 @@ function handleClick (evt) {
 
 
 function checkForTie () {
-    if (board.includes(null)) {
+    if (!board.includes(null)) {
         tie = true
     }
 }
 
 function checkForWinner () {
     if (
+        
     Math.abs(board[0] + board[1] + board[2] + board[3]) === 4 ||
     Math.abs(board[41] + board[40] + board[39] + board[38]) === 4 ||
     Math.abs(board[7] + board[8] + board[9] + board[10]) === 4 ||
@@ -230,8 +230,10 @@ function checkForWinner () {
     ) {
         winner = true
     }
-    
+
+
 }
+
 
 function switchPlayerTurn () {
     if(!winner) turn *= -1
