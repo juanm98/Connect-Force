@@ -129,7 +129,7 @@ function updateMessage () {
     if (!winner && !tie) {
         messageEl.textContent = `It's ${turn === 1 ? '🔴' : '🟡'}'s turn` 
     } else if (!winner && tie) {
-        messageEl.textContent = "Tie!";
+        messageEl.textContent = `It's a Tie!`;
     } else {
         messageEl.textContent = `${turn === 1 ? '🔴' : '🟡'} wins`;
     }
