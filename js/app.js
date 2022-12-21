@@ -83,7 +83,6 @@ const resultEl = document.getElementById('result')
 const messageEl = document.getElementById('current-player')
 const resetEl = document.getElementById('btn')
 /*----------------------------- Event Listeners -----------------------------*/
-console.log(circlesEl);
 circlesEl.forEach(function(circle) {
     circle.addEventListener('click', handleClick)
 })
@@ -139,15 +138,15 @@ function handleClick (evt) {
     const sqIdx = parseInt(evt.target.id.replace('circle', ''))
     if (board[sqIdx] !== null) return
     if (winner === true) return
-    checkForTie()
-    checkForWinner()
-
+    
     let bottonRow = 35
     while (board[sqIdx + bottonRow] !== null) {
         bottonRow -= 7 
     }
     board[sqIdx + bottonRow] = turn
-
+    
+    checkForTie()
+    checkForWinner()
     switchPlayerTurn()
     render()
 }
@@ -159,9 +158,12 @@ function checkForTie () {
     }
 }
 
+
 function checkForWinner () {
+    
     if (
-        
+    
+    Math.abs(board[14] + board[21] + board[28] + board[35]) === 4 ||
     Math.abs(board[0] + board[1] + board[2] + board[3]) === 4 ||
     Math.abs(board[41] + board[40] + board[39] + board[38]) === 4 ||
     Math.abs(board[7] + board[8] + board[9] + board[10]) === 4 ||
@@ -230,10 +232,7 @@ function checkForWinner () {
     ) {
         winner = true
     }
-
-
-}
-
+}    
 
 function switchPlayerTurn () {
     if(!winner) turn *= -1
