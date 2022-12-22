@@ -10,12 +10,15 @@
 <a href="https://juans-connect-four.netlify.app/" rel="nofollow">Play the game here</a>
 </h2>
 
-<h2>Technologies used</h2>
+<h2>Technologies Used</h2>
 <ul>
 <li>HTML</li>
 <li>CSS</li>
 <li>JavaScript</li>
 </ul>
+
+<h2>
+<a href="https://docs.google.com/document/d/1G38xNZC7lMrm94EmuKqFIxqNjd8TK49pKeXQEizE7RM/edit"> PseudoCode</a>
 
 <h2>Dev Tools</h2>
 
