@@ -4,7 +4,9 @@ body {
     justify-content: center;
     align-items: center;
     background-image: url(https://wallpaperset.com/w/full/8/4/0/139325.jpg);
-    background-size: cover;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-color: black;
 }
 
 h1 {
@@ -21,11 +23,12 @@ section {
     width: 650px;
     display: flex;
     flex-wrap: wrap;
-    background-color: rgb(140, 0, 255);
+    background-color: rgb(76, 33, 218);
     text-align: center; 
     justify-content: space-evenly;
     align-items: center;
     margin: auto;
+    border-radius: 8px;
 }
 
 div {
@@ -38,7 +41,7 @@ div {
 }
 
 .circle:hover {
-    background-color: orange;
+    background-color: black;
 }
 
 #btn {
