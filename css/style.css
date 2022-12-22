@@ -1,5 +1,5 @@
 body {
-    background-image: url(https://wallpaperset.com/w/full/8/4/0/139325.jpg);
+    background-image: url(https://wallpaper.dog/large/966390.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -10,11 +10,15 @@ body {
 }
 
 h1 {
-    color: white;
+    color: rgb(251, 251, 251);
+    font-weight: 600;
+    font-size: 50px;
 }
 
 h2 {
-    color: white;
+    color: rgb(251, 251, 251);
+    font-weight: 600;
+    font-size: 50px;
 }
 
 section {
@@ -45,8 +49,8 @@ div {
 }
 
 #btn {
-    color: white;
-    background-color: rgb(140, 0, 255);
+    color: black;
+    background-color: rgb(251, 251, 251);
     border-radius: 25px;
     padding: 8px 16px;
     font-weight: 500;
