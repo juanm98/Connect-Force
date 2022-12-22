@@ -24,7 +24,7 @@
 
 <h2>Assets Used</h2>
 <li>
-<a href="">Assets</a>
+<a href="https://github.com/juanm98/Connect-Four-Game/blob/main/Assets.md">Assets</a>
 </li>
 
 
