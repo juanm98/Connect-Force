@@ -3,7 +3,8 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: black;
+    background-image: url(https://wallpaperset.com/w/full/8/4/0/139325.jpg);
+    background-size: cover;
 }
 
 h1 {

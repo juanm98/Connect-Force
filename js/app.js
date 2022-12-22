@@ -71,8 +71,6 @@ let winningCombos = [
     [13, 20, 27, 34]
 ]
 
-
-
 /*---------------------------- Variables (state) ----------------------------*/
 let board, turn, winner, tie
 

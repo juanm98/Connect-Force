@@ -20,5 +20,5 @@ function playReset() {
 export {
     playLaser,
     playVictory,
-    playReset;
+    playReset
 }
