@@ -21,3 +21,24 @@
 <li>Google Fonts</li>
 <li>git</li>
 </ul>
+
+<h2>Credits</h2>
+
+
+<h2>Ice Box</h2>
+
+<ul id="list-items">
+<li id="task-item">
+<input type="checkbox" id disabled class="task-item-checkbox"> Light/Dark Mode
+</li>
+<li id="task-item">
+<input type="checkbox" id disabled class="task-item-checkbox"> Animations for tokens
+</li>
+<li id="task-item">
+<input type="checkbox" id disabled class="task-item-checkbox"> Add Star Wars music
+</li>
+<li id="task-item">
+<input type="checkbox" id disabled class="task-item-checkbox"> 
+Timer for when the game starts
+</li>
+</ul>
