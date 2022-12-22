@@ -71,10 +71,8 @@ let winningCombos = [
     [13, 20, 27, 34]
 ]
 
-
 /*---------------------------- Variables (state) ----------------------------*/
 let board, turn, winner, tie
-
 
 /*------------------------ Cached Element References ------------------------*/
 const circlesEl = document.querySelectorAll(".circle")
@@ -87,7 +85,6 @@ circlesEl.forEach(function(circle) {
     circle.addEventListener('click', handleClick)
 })
 resetEl.addEventListener('click', init)
-
 
 /*-------------------------------- Functions --------------------------------*/
 
@@ -151,16 +148,13 @@ function handleClick (evt) {
     render()
 }
 
-
 function checkForTie () {
     if (!board.includes(null)) {
         tie = true
     }
 }
 
-
 function checkForWinner () {
-    
     if (
     
     Math.abs(board[14] + board[21] + board[28] + board[35]) === 4 ||
