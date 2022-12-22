@@ -1,12 +1,12 @@
 body {
+    background-image: url(https://wallpaperset.com/w/full/8/4/0/139325.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image: url(https://wallpaperset.com/w/full/8/4/0/139325.jpg);
-    background-size: 100%;
-    background-repeat: no-repeat;
-    background-color: black;
 }
 
 h1 {
