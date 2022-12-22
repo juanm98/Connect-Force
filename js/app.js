@@ -1,4 +1,7 @@
 /*-------------------------------- Constants --------------------------------*/
+import * as starWarAudio from './audio.js'
+
+
 let winningCombos = [
     [0, 1, 2, 3],
     [41, 40, 39, 38],
@@ -113,9 +116,9 @@ function render () {
 function updateBoard () {
     board.forEach(function(circle, Idx) {
         if (circle === 1) {
-            circlesEl[Idx].innerHTML = "🔴"
+            circlesEl[Idx].innerHTML = '<img id="icon" src="picture-assets/vader-token.png">'
         } else if (circle === -1) {
-            circlesEl[Idx].innerHTML = "🟡"
+            circlesEl[Idx].innerHTML = '<img id="icon" src="picture-assets/yoda-token.png">'
         } else if (circle === null) {
             circlesEl[Idx].innerHTML = " "
         }
@@ -124,15 +127,16 @@ function updateBoard () {
 
 function updateMessage () {
     if (!winner && !tie) {
-        messageEl.textContent = `it's ${turn === 1 ? '🔴' : '🟡'}'s turn` 
+        messageEl.innerHTML = `it's ${turn === 1 ? '<img id="icon" src="picture-assets/vader-token.png">' : '<img id="icon" src="picture-assets/yoda-token.png">'}'s turn` 
     } else if (!winner && tie) {
-        messageEl.textContent = `it's a Tie!`;
+        messageEl.innerHTML = `it's a Tie!`;
     } else {
-        messageEl.textContent = `${turn === 1 ? '🔴' : '🟡'} wins`;
+        messageEl.innerHTML = `${turn === 1 ? '<img id="icon" src="picture-assets/vader-token.png">' : '<img id="icon" src="picture-assets/yoda-token.png">'} wins`;
     }
 }
 
 function handleClick (evt) {
+    starWarAudio.playLaser()
     const sqIdx = parseInt(evt.target.id.replace('circle', ''))
     if (board[sqIdx] !== null) return
     if (winner === true) return
