@@ -22,23 +22,18 @@
 <li>git</li>
 </ul>
 
-<h2>Credits</h2>
+<h2>Assets Used</h2>
+<li>
+<a href="">Assets</a>
+</li>
 
 
 <h2>Ice Box</h2>
 
-<ul id="list-items">
-<li id="task-item">
-<input type="checkbox" id disabled class="task-item-checkbox"> Light/Dark Mode
-</li>
-<li id="task-item">
-<input type="checkbox" id disabled class="task-item-checkbox"> Animations for tokens
-</li>
-<li id="task-item">
-<input type="checkbox" id disabled class="task-item-checkbox"> Add Star Wars music
-</li>
-<li id="task-item">
-<input type="checkbox" id disabled class="task-item-checkbox"> 
-Timer for when the game starts
-</li>
+<ul class="contains-task-list">
+
+<li class="task-list-item"><input type="checkbox" id="" disabled="" class="task-list-item-checkbox"> Light/Dark Mode</li>
+<li class="task-list-item"><input type="checkbox" id="" disabled="" class="task-list-item-checkbox"> Animations for tokens</li>
+<li class="task-list-item"><input type="checkbox" id="" disabled="" class="task-list-item-checkbox"> Add Star Wars music</li>
+<li class="task-list-item"><input type="checkbox" id="" disabled="" class="task-list-item-checkbox"> Timer for when the game starts</li>
 </ul>
