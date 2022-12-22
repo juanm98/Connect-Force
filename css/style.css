@@ -48,6 +48,13 @@ div {
     background-color: black;
 }
 
+.circle {
+    font-size: 95px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 #btn {
     color: black;
     background-color: rgb(251, 251, 251);
@@ -56,4 +63,3 @@ div {
     font-weight: 500;
     margin: 50px 0;
 }
-

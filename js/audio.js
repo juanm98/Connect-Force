@@ -1,6 +1,6 @@
-let laserSound = new Audio('../assets/Blaster.mp3')
-let victorySound = new Audio('../assets/Victory.mp3')
-let resetSound = new Audio('../assets/Reset.wav')
+let laserSound = new Audio('../audio-assets/Blaster.mp3')
+let victorySound = new Audio('../audio-assets/Victory.mp3')
+let resetSound = new Audio('../audio-assets/Reset.wav')
 
 function playLaser() {
     laserSound.volume = 0.25
