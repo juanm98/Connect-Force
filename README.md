@@ -41,8 +41,6 @@ Check out the
 <ul class="contains-task-list">
 
 <li class="task-list-item"><input type="checkbox" id="" disabled="" class="task-list-item-checkbox"> Light/Dark Mode</li>
-<li class="task-list-item"><input type="checkbox" id="" disabled="" class="task-list-item-checkbox"> Animations for tokens</li>
-<li class="task-list-item"><input type="checkbox" id="" disabled="" class="task-list-item-checkbox"> Add Star Wars music</li>
 <li class="task-list-item"><input type="checkbox" id="" disabled="" class="task-list-item-checkbox"> Timer for when the game starts</li>
 <li class="task-list-item"><input type="checkbox" id="" disabled="" class="task-list-item-checkbox"> Add an AI</li>
 </ul>
