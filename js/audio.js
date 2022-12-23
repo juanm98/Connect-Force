@@ -23,9 +23,14 @@ function playSoundTrack() {
     soundtrackSound.play()
 }
 
+function pauseSoundTrack() {
+    soundtrackSound.pause()
+}
+
 export {
     playLaser,
     playVictory,
     playReset,
-    playSoundTrack
+    playSoundTrack,
+    pauseSoundTrack
 }

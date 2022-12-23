@@ -84,13 +84,15 @@ const boardEl = document.querySelector('.board')
 const resultEl = document.getElementById('result')
 const messageEl = document.getElementById('current-player')
 const resetEl = document.getElementById('btn')
-const musicEl = document.getElementById('play-pause')
+const musicEl = document.getElementById('play')
+const musicStopEl = document.getElementById('pause')
 /*----------------------------- Event Listeners -----------------------------*/
 circlesEl.forEach(function(circle) {
     circle.addEventListener('click', handleClick)
 })
 resetEl.addEventListener('click', resetGame)
 musicEl.addEventListener('click', playMusic)
+musicStopEl.addEventListener('click', pauseAudio)
 /*-------------------------------- Functions --------------------------------*/
 
 init()
@@ -111,6 +113,10 @@ function init() {
 
 function playMusic() {
     starWarAudio.playSoundTrack()
+}
+
+function pauseAudio() {
+    starWarAudio.pauseSoundTrack()
 }
 
 function resetGame() {
