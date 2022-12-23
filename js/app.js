@@ -88,7 +88,7 @@ const resetEl = document.getElementById('btn')
 circlesEl.forEach(function(circle) {
     circle.addEventListener('click', handleClick)
 })
-resetEl.addEventListener('click', init)
+resetEl.addEventListener('click', resetGame)
 
 /*-------------------------------- Functions --------------------------------*/
 
@@ -106,6 +106,11 @@ function init() {
     winner = false
     tie = false
     render()
+}
+
+function resetGame() {
+    starWarAudio.playReset()
+    init()
 }
 
 function render () {
