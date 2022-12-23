@@ -29,9 +29,11 @@
 <li>Git</li>
 </ul>
 
-<h2>Assets Used</h2>
+<h2>Credits</h2>
 <li>
-<a href="https://github.com/juanm98/Connect-Four-Game/blob/main/Assets.md">Assets</a>
+"Check out the"
+<a href="https://github.com/juanm98/Connect-Four-Game/blob/main/Assets.md">Attributions</a>
+"."
 </li>
 
 

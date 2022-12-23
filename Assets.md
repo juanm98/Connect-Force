@@ -1,7 +1,9 @@
-<h1> Assets that I used </h1>
+<h1> Attributions </h1>
 
+<h2> While the below disclaimers are technically required by their license-holders I would like to also sincerely thank all the creators whose work makes this site look great. Thank you! </h2>
 
-Darth Vader Token: https://cdn.shopify.com/s/files/1/0604/9824/7913/products/ScreenShot2022-05-15at8.12.49pm_360x.png?v=1652609745 
+Darth Vader Token: 
+https://cdn.shopify.com/s/files/1/0604/9824/7913/products/ScreenShot2022-05-15at8.12.49pm_360x.png?v=1652609745 
 
 Baby Joda Token:
 https://www.moderncoinmart.com/2022-niue-star-wars-grogu-gold-gem-proof-25-coin-gem-proof-ogp-sku66142
