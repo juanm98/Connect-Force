@@ -25,7 +25,6 @@
 <ul>
 <li>VS Code</li>
 <li>GitHub</li>
-<li>Google Fonts</li>
 <li>Git</li>
 </ul>
 
@@ -45,4 +44,5 @@ Check out the
 <li class="task-list-item"><input type="checkbox" id="" disabled="" class="task-list-item-checkbox"> Animations for tokens</li>
 <li class="task-list-item"><input type="checkbox" id="" disabled="" class="task-list-item-checkbox"> Add Star Wars music</li>
 <li class="task-list-item"><input type="checkbox" id="" disabled="" class="task-list-item-checkbox"> Timer for when the game starts</li>
+<li class="task-list-item"><input type="checkbox" id="" disabled="" class="task-list-item-checkbox"> Add an AI</li>
 </ul>
