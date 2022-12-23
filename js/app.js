@@ -116,9 +116,13 @@ function render () {
 function updateBoard () {
     board.forEach(function(circle, Idx) {
         if (circle === 1) {
-            circlesEl[Idx].innerHTML = '<img id="icon" src="picture-assets/vader-token.png">'
+            circlesEl[Idx].innerHTML = '<img src="picture-assets/vader-token.png">'
+            circlesEl[Idx].classList.add('fall')
+            return
         } else if (circle === -1) {
-            circlesEl[Idx].innerHTML = '<img id="icon" src="picture-assets/yoda-token.png">'
+            circlesEl[Idx].innerHTML = '<img src="picture-assets/yoda-token.png">'
+            circlesEl[Idx].classList.add('fall')
+            return
         } else if (circle === null) {
             circlesEl[Idx].innerHTML = " "
         }
@@ -129,7 +133,7 @@ function updateMessage () {
     if (!winner && !tie) {
         messageEl.innerHTML = `it's ${turn === 1 ? '<img id="icon" src="picture-assets/vader-token.png">' : '<img id="icon" src="picture-assets/yoda-token.png">'}'s turn` 
     } else if (!winner && tie) {
-        messageEl.innerHTML = `it's a Tie!`;
+        messageEl.textContent = `it's a Tie!`;
     } else {
         messageEl.innerHTML = `${turn === 1 ? '<img id="icon" src="picture-assets/vader-token.png">' : '<img id="icon" src="picture-assets/yoda-token.png">'} wins`;
     }
@@ -161,7 +165,6 @@ function checkForTie () {
 
 function checkForWinner () {
     if (
-    
     Math.abs(board[14] + board[21] + board[28] + board[35]) === 4 ||
     Math.abs(board[0] + board[1] + board[2] + board[3]) === 4 ||
     Math.abs(board[41] + board[40] + board[39] + board[38]) === 4 ||
@@ -230,6 +233,7 @@ function checkForWinner () {
     
     ) {
         winner = true
+        starWarAudio.playVictory()
     }
 }    
 

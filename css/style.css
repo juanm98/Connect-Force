@@ -15,6 +15,20 @@ body {
     justify-content: center;
     align-items: center;
 }
+.fall {
+    animation-name: fall-animation;
+    animation-duration: 1000ms;
+}
+
+@keyframes fall-animation {
+    from {
+        transform: translateY(-500px);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
 
 h1 {
     color: rgb(231, 223, 13);
@@ -74,4 +88,3 @@ div {
     padding: 8px 16px;
     margin: 50px 0;
 }
-

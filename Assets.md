@@ -12,6 +12,9 @@ https://wallpaper.dog/star-wars-wallpapers
 Token Sound:
 https://freesound.org/people/MikeE63/sounds/466867/
 
+Victory Sound:
+https://www.youtube.com/watch?v=ZLHZalH85Lg
+
 Reset Sound:
 https://freesound.org/people/Breviceps/sounds/453390/
 
