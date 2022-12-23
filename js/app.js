@@ -84,12 +84,13 @@ const boardEl = document.querySelector('.board')
 const resultEl = document.getElementById('result')
 const messageEl = document.getElementById('current-player')
 const resetEl = document.getElementById('btn')
+const musicEl = document.getElementById('play-pause')
 /*----------------------------- Event Listeners -----------------------------*/
 circlesEl.forEach(function(circle) {
     circle.addEventListener('click', handleClick)
 })
 resetEl.addEventListener('click', resetGame)
-
+musicEl.addEventListener('click', playMusic)
 /*-------------------------------- Functions --------------------------------*/
 
 init()
@@ -106,6 +107,10 @@ function init() {
     winner = false
     tie = false
     render()
+}
+
+function playMusic() {
+    starWarAudio.playSoundTrack()
 }
 
 function resetGame() {

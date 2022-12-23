@@ -88,3 +88,12 @@ div {
     padding: 8px 16px;
     margin: 50px 0;
 }
+
+#play-pause {
+    font-family: 'StarWars';
+    letter-spacing: 4px;
+    color: black;
+    background-color: rgb(76, 33, 218);
+    border-radius: 25px;
+    padding: 8px 16px;
+}

@@ -1,6 +1,7 @@
 let laserSound = new Audio('../audio-assets/Blaster.mp3')
 let victorySound = new Audio('../audio-assets/Victory.mp3')
 let resetSound = new Audio('../audio-assets/Reset.wav')
+let soundtrackSound = new Audio('../audio-assets/Duel.mp3')
 
 function playLaser() {
     laserSound.volume = 0.25
@@ -17,8 +18,14 @@ function playReset() {
     resetSound.play()
 }
 
+function playSoundTrack() {
+    soundtrackSound.volume = 0.25
+    soundtrackSound.play()
+}
+
 export {
     playLaser,
     playVictory,
-    playReset
+    playReset,
+    playSoundTrack
 }
