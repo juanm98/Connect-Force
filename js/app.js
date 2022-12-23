@@ -1,4 +1,5 @@
 /*-------------------------------- Constants --------------------------------*/
+
 import * as starWarAudio from './audio.js'
 
 let winningCombos = [
@@ -74,9 +75,11 @@ let winningCombos = [
 ]
 
 /*---------------------------- Variables (state) ----------------------------*/
+
 let board, turn, winner, tie
 
 /*------------------------ Cached Element References ------------------------*/
+
 const circlesEl = document.querySelectorAll(".circle")
 const boardEl = document.querySelector('.board')
 const resultEl = document.getElementById('result')
@@ -84,13 +87,16 @@ const messageEl = document.getElementById('current-player')
 const resetEl = document.getElementById('btn')
 const musicEl = document.getElementById('play')
 const musicStopEl = document.getElementById('pause')
+
 /*----------------------------- Event Listeners -----------------------------*/
+
 circlesEl.forEach(function(circle) {
     circle.addEventListener('click', handleClick)
 })
 resetEl.addEventListener('click', resetGame)
 musicEl.addEventListener('click', playMusic)
 musicStopEl.addEventListener('click', pauseAudio)
+
 /*-------------------------------- Functions --------------------------------*/
 
 init()
