@@ -1,7 +1,6 @@
 /*-------------------------------- Constants --------------------------------*/
 import * as starWarAudio from './audio.js'
 
-
 let winningCombos = [
     [0, 1, 2, 3],
     [41, 40, 39, 38],
@@ -74,7 +73,6 @@ let winningCombos = [
     [13, 20, 27, 34]
 ]
 
-
 /*---------------------------- Variables (state) ----------------------------*/
 let board, turn, winner, tie
 
@@ -134,6 +132,7 @@ function updateBoard () {
         if (circle === 1) {
             circlesEl[Idx].innerHTML = '<img src="picture-assets/vader-token.png">'
             circlesEl[Idx].classList.add('fall')
+            // Here you're basically assigning a class of 'fall' to the tokens in order to add the animations.
             return
         } else if (circle === -1) {
             circlesEl[Idx].innerHTML = '<img src="picture-assets/yoda-token.png">'
@@ -147,25 +146,32 @@ function updateBoard () {
 
 function updateMessage () {
     if (!winner && !tie) {
-        messageEl.innerHTML = `it's ${turn === 1 ? '<img id="icon" src="picture-assets/vader-token.png">' : '<img id="icon" src="picture-assets/yoda-token.png">'}'s turn` 
+        messageEl.innerHTML = `it's ${turn === 1 ? '<img src="picture-assets/vader-token.png">' : '<img src="picture-assets/yoda-token.png">'}'s turn`
+        // If turn is equal to 1, the string will display an image of Vader. If turn is not equal to 1, the string will display an image of Yoda.
     } else if (!winner && tie) {
         messageEl.textContent = `it's a Tie!`;
     } else {
-        messageEl.innerHTML = `${turn === 1 ? '<img id="icon" src="picture-assets/vader-token.png">' : '<img id="icon" src="picture-assets/yoda-token.png">'} wins`;
+        messageEl.innerHTML = `${turn === 1 ? '<img src="picture-assets/vader-token.png">' : '<img src="picture-assets/yoda-token.png">'} wins`;
+        // If turn is equal to 1, the string will display an image of Vader. If turn is not equal to 1, the string will display an image of Yoda.
     }
 }
 
 function handleClick (evt) {
     starWarAudio.playLaser()
     const sqIdx = parseInt(evt.target.id.replace('circle', ''))
+    // parseInt parses a string argument and returns an integer, replacing the circle token with an empty string.
     if (board[sqIdx] !== null) return
+    // Here I'm checking whether the value at the index of the board array is not equal to null.
     if (winner === true) return
     
     let bottonRow = 35
     while (board[sqIdx + bottonRow] !== null) {
+        // This loop will continue to execute as long as the value at the sqIdx + bottonRow in the board array is not equal to null.
         bottonRow -= 7 
+        // Then this will decrement the valuie of bottonRow by 7.
     }
     board[sqIdx + bottonRow] = turn
+    // This line assigns the value of the turn variable to the sqIdx + bottonRow in the board array.
     
     checkForTie()
     checkForWinner()
@@ -182,6 +188,7 @@ function checkForTie () {
 function checkForWinner () {
     if (
     Math.abs(board[14] + board[21] + board[28] + board[35]) === 4 ||
+    // The Math.abs() function returns the absolute value of a number.
     Math.abs(board[0] + board[1] + board[2] + board[3]) === 4 ||
     Math.abs(board[41] + board[40] + board[39] + board[38]) === 4 ||
     Math.abs(board[7] + board[8] + board[9] + board[10]) === 4 ||
