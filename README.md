@@ -1,7 +1,7 @@
 <h1>Connect Force!</h1>
 
 
-<img src="https://i.imgur.com/UO0ySMT.png" alt="Semi-finished connect four game">
+<img src="https://i.imgur.com/vjIFky0.png" alt="Semi-finished connect four game">
 
 
 <p>Connect Force is a re-creation of Connect Four! Both players begin with 21 identical pieces, and the first player to achieve a line of four connected pieces wins the game. If all 42 tokens are played and no player has places four pieces in a row, the game is drawn.</p>
